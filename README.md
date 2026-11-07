@@ -1,21 +1,28 @@
-# Screenshots – Local Practice Instance Only
+# Avirenza Cyber Security Task 2
 
-All images in this folder were (or should be) captured while OWASP Juice Shop was running exclusively on:
+**Security Review of a Fictional College Fest Ticketing Website**  
+*(Practice target: OWASP Juice Shop – local instance only)*
 
-```
-http://127.0.0.1:3000
-```
+## What I produced
+- Threat model with Data Flow Diagram + trust boundaries
+- STRIDE analysis on every element
+- 8+ findings mapped to OWASP Top 10
+- Severity ratings (Critical / High / Medium)
+- Developer-ready remediation + verification steps
+- Top 5 priorities page for a project manager
+- Clear legal scope statement
 
-**Required evidence captures (add actual PNGs before final submission):**
+## Findings by severity
+| Severity  | Count |
+|-----------|-------|
+| Critical  | 2     |
+| High      | 3     |
+| Medium    | 3     |
+| **Total** | **≥ 8** |
 
-1. `01-homepage-local.png` – Juice Shop home page with address bar showing `127.0.0.1:3000`
-2. `02-login-sqli-result.png` – Successful authentication bypass after classic SQLi payload (token present)
-3. `03-idor-basket.png` – Response showing another user’s basket after changing the ID
-4. `04-xss-search.png` – Browser alert or DOM evidence of reflected XSS in search
-5. `05-ftp-listing.png` – Directory listing or file access under `/ftp`
-6. `06-error-verbose.png` – Example of a verbose error / stack trace
-7. `07-headers-missing.png` – Developer tools Network or Security panel showing missing security headers
-
-**Important:** Never include screenshots that show any non-localhost address, credentials belonging to real people, or production systems.
-
-Placeholder note: Because this package was assembled in a constrained environment without a running Docker instance of Juice Shop, the actual image files must be added by the student on their own machine after performing the local installation and capturing the evidence.
+## Practice application
+- **App:** OWASP Juice Shop  
+- **How it was run:** Docker, bound only to `127.0.0.1:3000`  
+- **Command used:**
+```bash
+docker run --rm -d -p 127.0.0.1:3000:3000 bkimminich/juice-shop
